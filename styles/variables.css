@@ -1,1 +1,17 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-family-variations: "Inter-Variable";
+    --font-family: "PressStart2P";
+    --wgth-main: 400;
+    --wgth-title: 700;
+    --background-color: #fff;
+    --color: #000;
+    --linear-gradient-color: #d3d3d3;
+    --linear-gradient-top-bootom: #e7e7e7 0.01%;
+    --linear-gradient-bottom: #1a1a1a;
+    --linear-gradient-transparent: transparent;
+    --shadow-color: #fff;
+    --color-button: #fff;
+    --color-contur: black;
+    --color-sparks: #FF0000;
+    --color-filling: #fff;
+}
