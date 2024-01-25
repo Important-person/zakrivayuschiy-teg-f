@@ -1,6 +1,6 @@
 .page {
   font-family: var(--font-family-variations), sans-serif;
-  font-weight: var(--wgth-main);
+  font-variation-settings: 'wgth' var(--wgth-main);
   background-color: var(--background-color);
   color: var(--color);
   min-inline-size: 320px;
@@ -129,7 +129,7 @@
   font-family: var(--font-family-variations);
   font-size: 18px;
   font-style: normal;
-  font-weight: var(--wgth-title);
+  font-variation-settings: 'wgth' var(--wgth-title);
   line-height: normal;
   padding-inline-start: 10px;
   padding-inline-end: 24px;
@@ -182,7 +182,6 @@
   font-family: var(--font-family-variations);
   font-size: 18px;
   font-style: normal;
-  font-weight: var(--wgth-main);
   line-height: 21px;
   padding-inline-start: 25px;
   padding-inline-end: clamp(1.747rem, 1.812rem + -0.277vw, 1.563rem);
