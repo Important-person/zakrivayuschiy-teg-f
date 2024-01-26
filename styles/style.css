@@ -30,7 +30,7 @@
 .header__link {
   color: var(--color, #000);
   font-family: var(--font-family), sans-serif;
-  font-size: clamp(49px, 2.71rem + 1.502vw, 65px);;
+  font-size: clamp(49px, 2.71rem + 1.502vw, 65px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
