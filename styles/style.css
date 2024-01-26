@@ -1,6 +1,6 @@
 .page {
   font-family: var(--font-family-variations), sans-serif;
-  font-variation-settings: 'wgth' var(--wgth-main);
+  font-variation-settings: "wght" var(--wgth-main);
   background-color: var(--background-color);
   color: var(--color);
   min-inline-size: 320px;
@@ -19,18 +19,24 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  border: 2px solid var(--color, #000);
+  border: 2px solid currentColor;
   background: var(--background-color, #FFF);
-  inline-size: clamp(375px, 16.138rem + 30.402vw, 696px);
+  inline-size: clamp(320px, 11.637rem + 35.681vw, 700px);
   margin-block-end: 100px;
   padding-block-end: 20px;
   padding-block-start: clamp(120px, 7.153rem + 1.497vw, 136px);
 }
 
+@media (width <=376px) {
+  .header {
+    inline-size: 100%;
+  }
+}
+
 .header__link {
   color: var(--color, #000);
-  font-family: var(--font-family);
-  font-size: clamp(3.063rem, 1.921rem + 4.923vw, 4.063rem);
+  font-family: var(--font-family), sans-serif;
+  font-size: clamp(49px, 2.616rem + 1.607vw, 65px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -40,7 +46,7 @@
 
 .header__title {
   color: var(--color, #000);
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   font-size: clamp(0.875rem, 0.233rem + 2.769vw, 1.438rem);
   font-style: normal;
   font-weight: 400;
@@ -49,14 +55,14 @@
 }
 
 .theme-menu__list {
-  padding-block-start: 5px;
+  padding-block-start: 4px;
   display: flex;
   flex-direction: column;
   gap: 7px;
 }
 
 .theme-menu__item {
-  padding-inline-start: 10px;
+  padding-inline-start: 17px;
 }
 
 .theme-menu__button {
@@ -64,7 +70,7 @@
   background-color: var(--background-color);
   border: none;
   color: var(--color, #000);
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -77,7 +83,8 @@
 .theme-menu__button:disabled:before {
   content: "▶";
   position: absolute;
-  left: -20px;
+  inset-block-start: center;
+  inset-inline-start: -20px;
   animation: arrow 0.5s infinite alternate ease-in-out;
 }
 
@@ -113,10 +120,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 52px;
-  inline-size: clamp(375px, 16.138rem + 30.402vw, 696px);
-  margin-block-end: 54px;
+  align-items: center;
+  gap: 52.2px;
+  inline-size: clamp(320px, 11.637rem + 35.681vw, 700px);
+}
+
+@media (width <=376px) {
+  .main {
+    inline-size: 100%;
+  }
 }
 
 .card {
@@ -126,10 +138,10 @@
 
 .main__title {
   color: var(--color, #000);
-  font-family: var(--font-family-variations);
+  font-family: inherit;
   font-size: 18px;
   font-style: normal;
-  font-variation-settings: 'wgth' var(--wgth-title);
+  font-variation-settings: "wght" var(--wgth-title);
   line-height: normal;
   padding-inline-start: 10px;
   padding-inline-end: 24px;
@@ -138,15 +150,15 @@
 
 .main__picture {
   position: relative;
-  border-top: 2px solid var(--color, #000);
-  border-bottom: 2px solid var(--color, #000);
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
 }
 
 .main__img {
   display: block;
   width: 100%;
   object-fit: cover;
-  block-size: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
+  aspect-ratio: 1 / 1;
 }
 
 .main__label {
@@ -156,7 +168,7 @@
   mix-blend-mode: hard-light;
   opacity: 0.5;
   color: var(--color, #000);
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -179,14 +191,17 @@
 
 .main__text {
   color: var(--color, #000);
-  font-family: var(--font-family-variations);
+  font-family: inherit;
   font-size: 18px;
   font-style: normal;
-  line-height: 21px;
+  line-height: 116.667%;
   padding-inline-start: 25px;
   padding-inline-end: clamp(1.747rem, 1.812rem + -0.277vw, 1.563rem);
   margin-block-start: 25px;
   margin-block-end: 27px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
 }
 
 .main__button {
@@ -207,10 +222,6 @@
   outline: 2px solid transparent;
   outline-offset: -2px;
   transition: outline 0.3s ease;
-}
-
-.sparks {
-  opacity: 0;
 }
 
 .card__icon-button:focus {
@@ -265,7 +276,7 @@
 
 .button__text {
   color: var(--color-button, #fff);
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -274,19 +285,15 @@
   mix-blend-mode: difference;
 }
 
-.footer {
+.save {
   background-color: var(--background-color, #000);
-  border: 2px solid var(--color, #000);
+  border: 2px solid currentColor;
 }
 
-.footer__button {
+.save__button {
   inline-size: clamp(306px, 18.496rem + 2.713vw, 335px);
-  padding-block: 15px;
-  display: flex;
+  padding-block: 16px;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
   border: none;
   gap: 8px;
 }
@@ -297,7 +304,7 @@
   mix-blend-mode: difference;
 }
 
-@media (width <=375px) {
+@media (width <=376px) {
   .floppy {
     width: 28px;
     height: 28px;
@@ -333,7 +340,7 @@
 
 .modal__text {
   color: var(--color);
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -342,9 +349,17 @@
   inline-size: clamp(12.375rem, 11.583rem + 3.38vw, 14.625rem);
 }
 
+.modal__form {
+  inline-size: 100%;
+}
+
 .modal__button {
   padding: 9px 17px;
   inline-size: 100%;
+}
+
+.form-text {
+  text-transform: uppercase;
 }
 
 .modal::backdrop {
